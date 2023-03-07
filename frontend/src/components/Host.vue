@@ -4,6 +4,7 @@ import {HostList,HostCreate,HostEdit,WriteHost, HostDelete} from '../../wailsjs/
 import {ElNotification} from "element-plus"
 import { basicSetup, EditorView } from "codemirror";
 import { EditorState } from "@codemirror/state";
+import { Delete } from '@element-plus/icons-vue';
 let list = ref()
 let props = defineProps(['flush'])
 watch(props, (newFlush)=>{
