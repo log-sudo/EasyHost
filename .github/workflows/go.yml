@@ -39,7 +39,5 @@ jobs:
         # Wails version to use
         # Webview2 installer method [download,embed,browser,error]
         go-version: 1.18
-    - name: Create release on GitHub
-      uses: docker://goreleaser/goreleaser:latest
-      with:
-        args: release
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.2
