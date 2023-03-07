@@ -31,7 +31,7 @@ jobs:
       uses: dAppServer/wails-build-action@v1
       with:
         build-platform: darwin/universal
-        wails-version: 2.0.0
+        wails-version: 2.3.0
         # Wails version to use
         # Webview2 installer method [download,embed,browser,error]
         go-version: 1.20.1
