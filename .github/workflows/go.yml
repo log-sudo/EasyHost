@@ -25,8 +25,15 @@ jobs:
       with:
         go-version: 1.20.1
         
-    - name: Wails Bun Build Action
-      uses: cryptodeal/wails-bun-build-action@v0.0.3
+    - name: Wails Build Action
+      # You may pin to the exact commit or the version.
+      # uses: dAppServer/wails-build-action@ea084a9005380833a7ae035ad0ba046e03073273
+      uses: dAppServer/wails-build-action@v1
+      with:
+        build-platform: darwin/universal
+        # Wails version to use
+        # Webview2 installer method [download,embed,browser,error]
+        go-version: 1.20.1
     
     - name: Build
       run: wails build --platform darwin -o EasyHost
