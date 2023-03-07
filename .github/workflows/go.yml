@@ -24,6 +24,12 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.20.1
+    - name: npm/yarn/pnpm install
+      uses: Jaid/action-npm-install@v1.2.4
+      with:
+        # Can be "npm", "yarn", "pnpm" or "auto". "auto" will determine the package manager by looking into the repo's files. This is very accurate, so you normally don't want to change this.
+        packageManager: "npm"
+    
         
     - name: Wails Build Action
       # You may pin to the exact commit or the version.
