@@ -19,8 +19,15 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
-        go-version: 1.19
-
+        go-version: 1.20.1
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.20.1
+        
+    - name: Wails Bun Build Action
+      uses: cryptodeal/wails-bun-build-action@v0.0.3
+    
     - name: Build
       run: wails build
 
