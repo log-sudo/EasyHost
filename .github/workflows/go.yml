@@ -1,0 +1,42 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.20.1
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.20.1
+        
+    - name: Wails Build Action
+      # You may pin to the exact commit or the version.
+      # uses: dAppServer/wails-build-action@ea084a9005380833a7ae035ad0ba046e03073273
+      uses: dAppServer/wails-build-action@v1
+      with:
+        build-platform: darwin/universal
+        # Wails version to use
+        # Webview2 installer method [download,embed,browser,error]
+        go-version: 1.20.1
+    
+    - name: Build
+      run: wails build --platform darwin -o EasyHost
+
+    - name: Test
+      run: go test -v ./...
