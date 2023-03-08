@@ -35,7 +35,7 @@ jobs:
       # uses: dAppServer/wails-build-action@ea084a9005380833a7ae035ad0ba046e03073273
       uses: dAppServer/wails-build-action@v1
       with:
-        build-platform: darwin
+        build-platform: darwin/universal
         wails-version: "v2.2.0"
         # Wails version to use
         # Webview2 installer method [download,embed,browser,error]
