@@ -47,4 +47,4 @@ jobs:
         # 上传后文件的名称
         name: mac
         # 打包的路径以及文件过滤，此为仅打包dist目录下的dmg文件
-        path: out/make/zip/darwin/x64/*.zip
+        path: /Users/runner/work/EasyHost/EasyHost/build/*
