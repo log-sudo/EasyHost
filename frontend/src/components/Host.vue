@@ -64,17 +64,10 @@ function click(index,item) {
  hostList()
 
  function hostDelete(item) {
-    if(item.identity=='1'){
-      ElNotification({
-      title:"系统默认不能删除",
-      type: "warn",
-      })
-      return;
-    }
-    if(item.use=='1'){
-      ElNotification({
-      title:"正在使用不能删除",
-      type: "warn",
+  if(item.identity=='1'){
+    ElNotification({
+    title:"系统默认不能删除",
+    type: "warn",
     })
     return;
   }

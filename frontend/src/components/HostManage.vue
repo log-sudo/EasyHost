@@ -33,9 +33,9 @@ const emits = defineEmits(['emit-host-list'])
 const dialogVisible = ref(false)
 
 let form = reactive({})
-if (props.data !== undefined) {
-  form = props.data
-}
+// if (props.data !== undefined) {
+//   form = props.data
+// }
 
 function createHost() {
   HostCreate(form).then(res => {
