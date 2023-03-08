@@ -1,3 +1,5 @@
+	
+		
 # This workflow will build a golang project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
 
@@ -12,7 +14,7 @@ on:
 jobs:
 
   build:
-    runs-on:  macos-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -24,15 +26,17 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.20.1
-    - name: npm/yarn/pnpm install
-      uses: Jaid/action-npm-install@v1.2.4
-      with:
-        # Can be "npm", "yarn", "pnpm" or "auto". "auto" will determine the package manager by looking into the repo's files. This is very accurate, so you normally don't want to change this.
-        packageManager: "npm"
+        
     - name: Wails Build Action
       # You may pin to the exact commit or the version.
       # uses: dAppServer/wails-build-action@ea084a9005380833a7ae035ad0ba046e03073273
       uses: dAppServer/wails-build-action@v1
+      with:
+        build-platform: darwin/universal
+        wails-version: "v2.2.0"
+        # Wails version to use
+        # Webview2 installer method [download,embed,browser,error]
+        go-version: 1.18
     - name: Upload File
       # 使用预制action：上传文件，可以将执行路径打包成zip上传
       uses: actions/upload-artifact@v2
@@ -41,4 +45,3 @@ jobs:
         name: mac
         # 打包的路径以及文件过滤，此为仅打包dist目录下的dmg文件
         path: out/make/zip/darwin/x64/*.zip
-
