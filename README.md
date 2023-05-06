@@ -1,7 +1,7 @@
 # EasyHost
 
 #### 介绍
-golang+wails 实现Host动态切换，仿照SwitchHosts实现，打包后仅9M大小，无需按照，初学golang
+golang+wails 实现Host动态切换，仿照SwitchHosts实现，打包后仅9M大小，无需解压，初学golang独立完成的项目
 #### 软件架构
 golang+wails+vue3+elementPlus+codemirror6
 
